@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
             <hr />
             <div className='footer-bottom theme'>
-                <p>&copy; TAXA {new Date().getFullYear()}</p>
+                <p>&copy; KDAN {new Date().getFullYear()}</p>
                 <NavLink to={'/about#faq'} title='what people ask'>FAQ</NavLink>
             </div>
         

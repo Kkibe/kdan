@@ -164,6 +164,10 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+    .news-item{
+        width: calc((100% - 30px) /2);
+    }
 }
 
 

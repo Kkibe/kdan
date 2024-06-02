@@ -31,7 +31,7 @@ const Contact = () => {
               <div className="contacts">
                 <NavLink to="#" title='Taxa Kenya'>
                   <img src={Logo} alt='taxa_logo'/>
-                  <h1>TAXA<span>.org</span></h1>
+                  <h1>KDAN<span>.org</span></h1>
                 </NavLink>
                 <p>
                   431 University Way, 1st Floor<br/>
@@ -39,7 +39,7 @@ const Contact = () => {
                   Kenya
                 </p>
                 <p><Phone />  phone <Link to="tel:+1234567890">+1 234 567 890</Link></p>
-                <p><Email />  mail to. <Link to="mailto:admin@taxa.org">admin@taxa.org</Link></p>
+                <p><Email />  mail to. <Link to="mailto:admin@taxa.org">admin@kdan.org</Link></p>
               </div>
             
             <form onSubmit={handleSubmit}>

@@ -112,7 +112,7 @@ export  const addNews = async (data, setError) => {
         window.location.replace(`/news/${docRef.id}`);
       })
       .catch(async (error) => {
-        setError(errorMessage);
+        setError(error.message);
       });
     })
     
