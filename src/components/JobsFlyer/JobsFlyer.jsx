@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import Bg from '../../assets/bg.mp4';
 export default function JobsFlyer() {
   const handleToggle = async () => {
     document.querySelector('.donate').classList.toggle('active');

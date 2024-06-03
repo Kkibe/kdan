@@ -38,7 +38,7 @@ export const getNews= async (pagination, setNews) => {
   q = query(newsCollectionRef, limit(pagination));
   //const q = query(newsCollectionRef, orderBy("title"), limit(pagination));
   const news = [];
-  const querySnapshot = await getDocs(q).then((data) => {
+  await getDocs(q).then((data) => {
     data.forEach((doc) => {
      news.push({id: doc.id,...doc.data()});
     });

@@ -29,8 +29,8 @@ const Contact = () => {
           <h1>Get Connected</h1>
           <div className="wrapper">
               <div className="contacts">
-                <NavLink to="#" title='Taxa Kenya'>
-                  <img src={Logo} alt='taxa_logo'/>
+                <NavLink to="/" title='kdan'>
+                  <img src={Logo} alt='kdan_logo'/>
                   <h1>KDAN<span>.org</span></h1>
                 </NavLink>
                 <p>

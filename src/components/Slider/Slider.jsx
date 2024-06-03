@@ -1,5 +1,5 @@
 import { ArrowLeftOutlined, ArrowRightOutlined  } from '@mui/icons-material';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import './Slider.scss'
 //slides
 import Taxa1 from '../../assets/online-services-for-you.webp';

@@ -11,36 +11,36 @@ const Data = [
   {
     id:1,
     name: "Learn more",
-    title: "Community Engagement and Mobilization",
+    title: "Research and Data Analysis",
     img: Taxa1,
-    desc: "Build networks of community advocates to amplify voices and drive grassroots movements for change.",
+    desc: "Carry out research on the state of debt in Kenya, analyzing trends, impacts, and potential solutions. Publish reports and studies to inform policy decisions and raise public awareness.",
     link: "#"
 },
 
 {
     id:2,
     name: "Learn more",
-    title: "Transparency and Accountability Initiative",
+    title: "Support for Small Businesses and Entrepreneurs",
     img: Taxa2,
-    desc: "Monitor and report on government tax collection and expenditure to ensure transparency and hold authorities accountable for tax-related decisions.",
+    desc: "Offer support services for small businesses and entrepreneurs, including financial planning advice, access to microloans, and training programs to help them grow and succeed without falling into debt traps.",
     link: "#"
 },
 
 {
     id:3,
     name: "Learn More",
-    title: "Advocacy and Policy Reform",
+    title: "Advocacy and Policy Engagement",
     img: Taxa3,
-    desc: "Engage with policymakers to advocate for fair and equitable tax policies. Draft policy recommendations and collaborate with government agencies to implement reforms.",
+    desc: "Engage in advocacy efforts to influence policy changes that promote debt relief and financial justice. Work with government agencies, international organizations, and policymakers to push for systemic changes that benefit Kenyan citizens.",
     link: "#"
 },
 
 {
     id:4,
     name: "Learn more",
-    title: "Education and Awareness Programs",
+    title: "Educational Workshops and Seminars",
     img: Taxa4,
-    desc: "Conduct workshops, seminars, and webinars to educate the public about tax rights and responsibilities. Develop and distribute informational materials that explain tax issues and their impact on society.",
+    desc: "Offer workshops and seminars focused on financial literacy, debt management, and economic empowerment. These sessions aim to equip participants with the knowledge and skills to manage their finances effectively.",
     link: "#"
 }
         ]

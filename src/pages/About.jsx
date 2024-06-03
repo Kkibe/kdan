@@ -1,7 +1,7 @@
 import React from 'react'
 import Contact from '../components/Contact/Contact';
 import Faq from '../components/Faq/Faq';
-import Image from '../assets/taxa.png';
+import Image from '../assets/KDAN.png';
 
 export default function About() {
   return (
@@ -10,20 +10,20 @@ export default function About() {
       <img src={Image} alt="taxa_about_flyer_thumbnail" />
       <div className='content'>
         <p>
-        Join us in the fight against tax discrimination and injustices in Kenya. Our mission is to ensure fair and equitable tax policies for all citizens, promote transparency, and hold authorities accountable. Together, we can create a just tax system that supports economic growth and social equity. Learn more and get involved today.
+        Kenya Debt Abolition Network is dedicated to advocating for the elimination of unsustainable debt burdens in Kenya. Through education, advocacy, and community engagement, we aim to create a debt-free future that fosters economic growth and social equity.
         </p>
       </div>
     </div>
     <div className="quote">
       <div className='content'>
         <p>
-        Welcome to our initiative dedicated to combating tax discrimination and injustices in Kenya. We are committed to advocating for fair and equitable tax policies that benefit all citizens, regardless of their socio-economic status. Our work involves raising awareness about the impacts of unfair tax practices, promoting transparency in tax collection and allocation, and holding authorities accountable to ensure that tax revenues are used to improve public services and infrastructure.
+        Kenya Debt Abolition Network is a passionate organization committed to addressing and resolving the critical issue of unsustainable debt in Kenya. Our mission is to advocate for the abolition of onerous debt obligations that hinder economic progress and perpetuate inequality. We believe that every Kenyan deserves the opportunity to thrive without the constraints of overwhelming debt.
         <br />
         <br />
-        Tax discrimination not only undermines economic stability but also exacerbates social inequalities. We believe that every Kenyan deserves a tax system that is just, transparent, and conducive to economic growth. Our organization works tirelessly to engage with policymakers, conduct research, and mobilize communities to advocate for reforms that will lead to a more equitable distribution of resources.
+        Our approach combines education, advocacy, and community engagement. We work tirelessly to raise awareness about the impacts of debt, lobby for policy changes that promote financial justice, and support grassroots movements that empower communities. By collaborating with stakeholders across various sectors, we strive to create a sustainable economic environment that benefits all Kenyans.
+        <br/>
         <br />
-        <br />
-        Join us in our mission to create a fair tax system in Kenya. Through education, advocacy, and community engagement, we can make a difference. Learn more about our work, get involved in our campaigns, and help us build a future where tax justice prevails for the benefit of all Kenyans. Together, we can drive change and ensure that tax policies support sustainable development and social justice.
+        Join us in our mission to build a debt-free Kenya, where financial freedom and economic opportunity are accessible to everyone. Together, we can make a difference and pave the way for a brighter, more equitable future.
         </p>
       </div>
     </div>

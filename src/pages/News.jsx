@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import NewsItem from '../components/NewsItem/NewsItem';
 import { getNews } from '../firebase';
+import { NavLink } from 'react-router-dom';
 
 
 export default function News() {
@@ -26,11 +27,11 @@ export default function News() {
               return <NewsItem key={blog.id} data={blog}/>
             })
           }
-        <a className="btn" onClick={() => setLoading(!loading)}>
+        <NavLink className="btn" onClick={() => setLoading(!loading)}>
           {
             loading ? "Loading..." : "Load More"
           }
-        </a>
+        </NavLink>
       </div>
     </div>
   )
