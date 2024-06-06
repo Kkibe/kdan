@@ -2,6 +2,7 @@ import React from 'react';
 import './NewsItem.scss'
 import { NavLink } from 'react-router-dom';
 import Image from '../../assets/logo.png';
+import { ArrowForward } from '@mui/icons-material';
 
 export default function NewsItem({data}) {
   const readingTime = (articleText) => {
@@ -29,7 +30,7 @@ export default function NewsItem({data}) {
         <span className="article-pre__aut">{data.timestamp}</span> 
         <span className="date"> - {readingTime(data.description)} mins read</span>
       </h4>
-      <h3>{truncateTitle(data.title, 42)}<span> →</span></h3>
+      <h3>{data.title}<span> <ArrowForward /></span></h3>
     </NavLink>
   </div>
   )

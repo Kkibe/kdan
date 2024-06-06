@@ -1,7 +1,7 @@
 {
   "short_name": "KDAN",
-  "name": "Kenya Debt Abolition Network",
-  "description": "Empowering Kenya, Erasing Debt",
+  "name": "KDAN",
+  "description": "Kenya Debt Abolition Network - Empowering Kenya, Erasing Debt",
   "icons": [
     {
       "src": "favicon.ico",
@@ -61,6 +61,6 @@
   "display": "standalone",
   "theme_color": "#2196f3",
   "background_color": "#ebf4fc",
-  "orientation": "any",
+  "orientation": "portrait",
   "categories": ["Utilities", "Finance", "Business", "News", "Tools"]
 }

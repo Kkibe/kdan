@@ -30,7 +30,6 @@ function App() {
     }
   }, [loading]);
 
-
   return (
     <div className="App">
       {

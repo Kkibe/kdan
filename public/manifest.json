@@ -1,7 +1,7 @@
 {
   "short_name": "KDAN",
-  "name": "Kenya Debt Abolition Network",
-  "description": "Empowering Kenya, Erasing Debt",
+  "name": "KDAN",
+  "description": "Kenya Debt Abolition Network - Empowering Kenya, Erasing Debt",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,8 +11,7 @@
     {
       "src": "maskable_icon.png",
       "sizes": "196x196",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
       "src": "logo32.png",
@@ -47,7 +46,8 @@
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "author": "https://github.com/k-kibet",
@@ -61,6 +61,6 @@
   "display": "standalone",
   "theme_color": "#2196f3",
   "background_color": "#ebf4fc",
-  "orientation": "any",
+  "orientation": "portrait",
   "categories": ["Utilities", "Finance", "Business", "News", "Tools"]
 }

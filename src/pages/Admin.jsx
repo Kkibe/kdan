@@ -10,6 +10,7 @@ export default function Admin() {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [image, setImage] = useState(null);
+    const [category, setCategory] = useState('all');
     const {currentUser} = useContext(AuthContext);
     
     const handleSubmit = (e) => {
@@ -17,7 +18,7 @@ export default function Admin() {
         if(!title && !description && !image){
             return setError("Enter all fields to continue");
         }
-        addNews({title, description, category: "finance", image}, setError);
+        addNews({title, description, category: category, image}, setError);
     }
 
     useEffect(() => {
@@ -52,6 +53,14 @@ export default function Admin() {
                     </>
                 }
             </div>
+            <label htmlFor='category'>Select category:</label>
+            <select defaultValue={'all'} placeholder="Select option" id='category' name='category'
+              onChange={(e) =>setCategory(e.target.value)}>
+              <option value="all" >All</option>
+              <option value="business" >Business</option>
+              <option value="finance" >Finance</option>
+              <option value="statistics" >Statistics</option>
+            </select>
             <label htmlFor="description">post description:</label>
             <textarea placeholder="Write post content here..." name='description' id='description' required value={description} onChange={(e) => setDescription(e.target.value)}/>
             <button className='btn'>Publish <Forward /></button>

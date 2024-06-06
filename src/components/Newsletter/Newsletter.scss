@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: space-evenly;
     margin: 10px 0;
+    padding: 0 5px;
     
     p{
         font-size: 15px;
@@ -43,5 +44,12 @@
                 background: var(--light-blue);
             }
         }
+    }
+    .success{
+        color: var(--blue);
+    }
+    
+    .error{
+        color: red;
     }
 }

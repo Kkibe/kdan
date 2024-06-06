@@ -2,13 +2,13 @@
   --lite: #fff;//rgba(220, 250, 250, 0.9);
   --black: #262626;
   --white: rgb(242, 243, 242);
-  --dark: #3b3b3b;//rgb(41, 39, 39);
-  --light-blue: #d9ffcf;;
+  --dark: #3b3b3b;// #292727;
+  --light-blue: #d9ffcf;
   --dark-blue: #023020;
   --blue: #007A37;
   --grey: #4d5974;
-  --dark-shadow: 0px 5px 3px -4px --dark;
-  --shadow: 0px 1px 2px -1px --dark,0px 1px 2px -1px --blue;
+  --dark-shadow: 0px 5px 3px -4px --black;
+  --shadow: 1px 2px 3px -1px --black,1px 2px 3px -1px --black;
   --transparent:rgba(0, 0, 0, .03);
 } 
 
@@ -35,7 +35,7 @@
     justify-content: center;
     margin-top: 60px;
     color: var(--dark);
-    min-height: calc(100vh - 200px);
+    //min-height: calc(100vh - 200px);
     
     h1{
       width: 100%;

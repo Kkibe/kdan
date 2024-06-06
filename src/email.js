@@ -17,7 +17,7 @@ export const handleSend = (text, ) => {
         subject: 'testing emailjs',
         attachment: [
             { data: '<html>i <i>hope</i> this works!</html>', alternative: true },
-            { path: 'path/to/file.zip', type: 'application/zip', name: 'renamed.zip' },
+            { path: 'src/assets/logo.png', type: 'image/png', name: 'renamed.png' },
         ],
     };
     

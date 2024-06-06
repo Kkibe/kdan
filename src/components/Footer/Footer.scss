@@ -13,8 +13,11 @@
         padding: 5px 0;
         flex-wrap: wrap;
         
+        h2{
+            flex: 1;
+        }
         .wrapper{
-            min-width: 300px;
+            flex: 1.5;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
@@ -43,11 +46,6 @@
         align-items: center;
         justify-content: space-evenly;
 
-        @media screen and (max-width: 478px) {
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
         p{
             font-size: 14px;
             color: var(--dark);
@@ -60,6 +58,22 @@
             color: var(--dark);
             font-size: 14px;
             cursor: pointer;
+        }
+
+        .btn-top{
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            outline: none;
+            border: 1px solid var(--dark-blue);
+            background-color: transparent;
+            border-radius: 5px;
+            z-index: 1000;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .btn-top:hover{
+            background-color: var(--green);
         }
     }
 }

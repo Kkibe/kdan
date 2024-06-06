@@ -1,9 +1,8 @@
 .loader {
-    position: absolute;
+    position: relative;
     top:50%;
     left:50%;
     animation: whole 18s linear infinite;
-    transform:translate(-50%,-50%);
     width:50px;
     height:50px;
   }
@@ -57,14 +56,14 @@
       margin-left:15px;
       width:30px;
       height:30px;
-      background:#c9d9e9;
+      background: var(--light-blue);//#c9d9e9
     }
     50% {
       margin-top:0px;
       margin-left:0px;
       width:60px;
       height:60px;
-      background:#3a9fff;
+      background: var(--blue);
     }
   }
   @keyframes whole {

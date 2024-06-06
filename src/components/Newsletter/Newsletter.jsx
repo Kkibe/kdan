@@ -1,20 +1,26 @@
 import { Send } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
 import './Newsletter.scss';
+import {addMailList} from '../../firebase';
 
 const Newsletter = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState(null);
+    const [success, setSuccess] = useState(null);
     const handleSubmit = (event) => {
         event.preventDefault();
-    
+        addMailList({email}, setSuccess, setError);
     };
 
     useEffect(() => {
         error && setTimeout(() => {
           setError(null);
         }, 1000);
-      }, [error]);
+        
+        success && setTimeout(() => {
+          setSuccess(null);
+        }, 1000);
+      }, [error, success]);
     
     return (
         <div className='newsletter theme'>
@@ -31,7 +37,10 @@ const Newsletter = () => {
                 </button>
             </form>
             {
-              error && <h4 className='error'>An error occurred!</h4>
+              error && <h4 className='error'>{error}!</h4>
+            }
+            {
+              success && <h4 className='success'>{success}!</h4>
             }
         </div>
     );

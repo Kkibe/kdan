@@ -80,7 +80,7 @@ export default function Donate() {
       'Access-Control-Allow-Origin' : '*',
     }})
     .then((res) => {
-      console.log("RESPONSE RECEIVED: ", res);
+      console.log(res);
     }).catch(error => {
       console.log(error);
     })

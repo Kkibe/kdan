@@ -4,29 +4,39 @@ import Logo from '../../assets/logo.png';
 import { Email, Phone } from '@mui/icons-material';
 import { Link, NavLink } from 'react-router-dom';
 import Bg from '../../assets/bg.mp4';
+import Dialog from '../Dialog/Dialog';
+import {addContact} from '../../firebase';
+
 
 const Contact = () => {
   const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
+    addContact({name, email, message}, setSuccess, setError);
   };
   
   useEffect(() => {
     error && setTimeout(() => {
       setError(null);
     }, 1000);
-  }, [error]);
+    
+    success && setTimeout(() => {
+      setSuccess(null);
+    }, 1000);
+  }, [error, success]);
     return (
         <div className="contact">
           <video className='video' autoPlay loop muted>
             <source src={Bg} type='video/mp4' />
           </video>
           <h1>Get Connected</h1>
+          {success && <Dialog text={success} title={"Your details was submitted!"} isError={false}/>}
+          {error && <Dialog text={error} title={"An Error Occurred!"} isError={true}/>}
           <div className="wrapper">
               <div className="contacts">
                 <NavLink to="/" title='kdan'>
@@ -48,7 +58,7 @@ const Contact = () => {
                 <input type="email"  placeholder="EMAIL"  required value={email} onChange={(e) => setEmail(e.target.value)}/>
               </div>
               <textarea placeholder="MESSAGE" required value={message} onChange={(e) => setMessage(e.target.value)}/>
-              <NavLink className='btn' type="submit" title='send'>SEND</NavLink>
+              <button className='btn' title='send' type='submit'>SEND</button>
               {
                 error && <h4 className='error'>Invalid Phone Number</h4>
               }

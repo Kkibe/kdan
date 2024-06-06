@@ -28,12 +28,6 @@ header{
             object-fit: fill;
             object-position: center;
         }
-
-        @media screen and (max-width: 480px){
-            &{
-                display: none;
-            }
-        }
     }
     
     nav{
@@ -66,19 +60,20 @@ header{
             border-bottom: 2px solid var(--blue);
         }
     }
-    
+     
     .btn-wrapper{
         
         .btn{
             box-shadow: none;
             background: transparent;
             color: var(--grey);
-            border: 1px solid #c9d9e9;
+            border: 1px solid var(--dark-blue);
            &:hover {
             background: transparent;
             color: var(--dark-blue);
             box-shadow: none;
-            border: 1px solid var(--grey);
+            //border: 1px solid #023020;
+            background: var(--light-blue);
            }
            @media screen and (max-width:480px) {
             &{

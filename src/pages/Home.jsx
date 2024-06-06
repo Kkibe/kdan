@@ -8,10 +8,13 @@ import { getNews } from '../firebase';
 
 export default function Home() {
   const [news, setNews] = useState([]);
+  const [isOnline] = useState(() =>{
+    return navigator.onLine
+  })
   
   useEffect(() =>{
-    getNews(4, setNews);
-  }, []);
+    getNews(4, "all", setNews);
+  }, [isOnline]);
   
   return (
     <div className='Home'>
