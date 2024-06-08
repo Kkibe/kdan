@@ -34,7 +34,7 @@ export const getNews= async (pagination, category, setNews) => {
   const newsCollectionRef = collection(db, "news");
   var q = query(newsCollectionRef, orderBy("timestamp", "desc"), limit(pagination));
   if(category !== 'all'){
-    q = query(newsCollectionRef, orderBy("timestamp", "desc"), where('category', '==', category), limit(pagination));
+    q = query(newsCollectionRef, where('category', '==', category), orderBy("timestamp", "desc"), limit(pagination));
   }
   
   const news = [];

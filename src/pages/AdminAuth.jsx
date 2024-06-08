@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { signInUser } from '../firebase';
+import { Helmet } from 'react-helmet-async';
 
 export default function AdminAuth() {
     const [email, setEmail] = useState('');
@@ -20,6 +21,13 @@ export default function AdminAuth() {
   
   return (
     <div className='admin'>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>ADMIN AUTH KDAN KENYA - "Empowering Kenya, Erasing Debt"</title>
+            <link rel="canonical" href={window.location.hostname} />
+            <base href={window.location.hostname}></base>
+            <meta name="description" content={"Kenya Debt Abolition Network is dedicated to advocating for the elimination of unsustainable debt burdens in Kenya. Through education, advocacy, and community engagement, we aim to create a debt-free future that fosters economic growth and social equity."}/>
+          </Helmet>
         <h1>ADMIN LOGIN</h1>
         <h4>Only for admin users</h4>
         <form onSubmit={handleSubmit}>

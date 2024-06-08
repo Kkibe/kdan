@@ -11,15 +11,16 @@ export default function News() {
   const [news, setNews] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [newsPerPage] = useState(6);
-  const [category, setCategory] = useState('all');
+  const [category, setCategory] = useState('finance');
   let location = useLocation();
+
   const [isOnline] = useState(() =>{
     return navigator.onLine
   })
   
   useEffect(() =>{
     getNews(currentPage * newsPerPage, category, setNews);
-  }, [currentPage, category, isOnline, newsPerPage]);
+  }, [currentPage, category, isOnline, newsPerPage, location]);
   
   useEffect(() => {
     loading && setTimeout(() => {
@@ -29,23 +30,21 @@ export default function News() {
   
   const handleReload = () => {
     getNews(currentPage * newsPerPage, category, setNews);
-  };
+  }
   
-  /*
   useEffect(() => {
-    setCategory(location.search.split("=")[1]);
+    location.search.split("=")[1] && setCategory(location.search.split("=")[1]);
   }, [location.search]);
-  */
  
   return (
     <div className='news'>
       <div className="news-flyer">
         <h1>Explore News</h1>
         <div className="order-categories">
-          <NavLink title='all' to='/news?category=all'>All</NavLink>
-          <NavLink title='finance' to='/news?category=finance'>Finance</NavLink>
-          <NavLink title='business' to='/news?category=business'>Business</NavLink>
-          <NavLink title='statistics' to='/news?category=statistics'>Statistics</NavLink>
+          <NavLink title='all' to='?category=all' className={category === 'all' && "current"}>All</NavLink>
+          <NavLink title='finance' to='?category=finance' className={category === 'finance' && "current"}>Finance</NavLink>
+          <NavLink title='business' to='?category=business' className={category === 'business' && "current"}>Business</NavLink>
+          <NavLink title='statistics' to='?category=statistics' className={category === 'statistics' && "current"}>Statistics</NavLink>
         </div>
         <div className="social">
           <Link to='https://twitter.com/ancientpupy' title='twitter/@kdan_kenya' target='_blank'><X /></Link>

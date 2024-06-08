@@ -1,5 +1,7 @@
 import { Routes, Route} from "react-router-dom";
+import { HelmetProvider, HelmetData  } from "react-helmet-async";
 import { useEffect, useState, useContext} from 'react';
+import { renderToString } from 'react-dom/server';
 import { AuthContext } from './AuthContext'
 
 import Navbar from './components/Navbar/Navbar';
@@ -16,6 +18,8 @@ import AdminAuth from './pages/AdminAuth';
 import About from './pages/About';
 import Error from './pages/Error';
 
+const helmetData = new HelmetData({});
+
 function App() {
   const [loading, setLoading] = useState(false);
   const { currentUser } = useContext(AuthContext);
@@ -31,6 +35,7 @@ function App() {
   }, [loading]);
 
   return (
+    <HelmetProvider>
     <div className="App">
       {
         loading&& <Loader />
@@ -52,6 +57,10 @@ function App() {
       </>
       }
     </div>
+    </HelmetProvider>
   );
 }
 export default App;
+
+const { helmet } = helmetData.context;
+

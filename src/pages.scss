@@ -211,10 +211,10 @@
                 text-align: center;
                 padding: 3px 5px;
                 border: none;
+                border: 1px solid #ccc;
                 
-                &.active{
+                &.current{
                     background: var(--white);
-                    border: 1px solid #ccc;
                 }
             }
         }
@@ -398,6 +398,11 @@
                 .news-items{
                     flex-direction: row;
                     justify-content: space-between;
+                    .news-item{
+                        //width: calc((100% - 20px) / 2);
+                        font-size: 16px;
+                        min-width: 100%;
+                    }
                 }
                 .newsletter{
                     display: none;

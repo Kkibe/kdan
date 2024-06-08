@@ -5,6 +5,7 @@ import NewsItem from '../components/NewsItem/NewsItem';
 import Loader from '../components/Loader/Loader';
 import Newsletter from '../components/Newsletter/Newsletter';
 import { useLocation, NavLink } from 'react-router-dom';
+import {Helmet} from "react-helmet-async";
 
 export default function SingleNews() {
   const [news, setNews] = useState(null);
@@ -40,11 +41,22 @@ export default function SingleNews() {
   }, [location]);
 
   useEffect(() => {
-    news && getNews(2,  "all", setRelatedNews);
+    news && getNews(2,  news.category, setRelatedNews);
   }, [news])
   
   return (
     <div className='single-news'>
+          
+          {news &&<Helmet>
+            <meta charSet="utf-8" />
+            <title>{news.title}</title>
+            <link rel="canonical" href={window.location.hostname} />
+            <base href={window.location.hostname}></base>
+            <meta name="description" content={news.title}/>
+            <meta name="keywords" content={`tax, business, policy, ${news.category}`}/>
+            <meta name="author" content="Taxa Kenya"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          </Helmet>}
           <div className="scroll-line" style={{width: scroll + '%'}}></div>
           {news && <div className="wrapper">
             <img src={news.imageUrl ? news.imageUrl : Image} alt={truncateTitle(news.title, 5)} />
