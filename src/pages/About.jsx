@@ -1,7 +1,7 @@
 import React from 'react'
 import Contact from '../components/Contact/Contact';
 import Faq from '../components/Faq/Faq';
-import Image from '../assets/KDAN.png';
+import Image from '../assets/kdan-flyer.png';
 import { Helmet } from 'react-helmet-async';
 
 export default function About() {

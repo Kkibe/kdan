@@ -100,7 +100,7 @@
         }
 
         #category{
-            border: 1px solid #ccc;
+            border: 1px solid var(--grey);
             border-radius: 4px;
             text-align: center;
             padding: 3px 5px;
@@ -198,7 +198,7 @@
         justify-content: space-evenly;
         background: var(--light-blue);
         position: relative;
-
+        
 
         .order-categories{
             width: 100%;
@@ -211,7 +211,7 @@
                 text-align: center;
                 padding: 3px 5px;
                 border: none;
-                border: 1px solid #ccc;
+                border: 1px solid var(--light-grey);
                 
                 &.current{
                     background: var(--white);
@@ -231,6 +231,7 @@
             position: absolute;
             z-index: 1;
             a{
+                color: var(--black);
                 *{
                     font-size: 24px;
                 }
@@ -256,7 +257,6 @@
         max-width: 300px;
     }
     .btn{
-        //display: none;
         margin: 5px 0;
     }
 
@@ -366,7 +366,7 @@
         }
         
         .category{
-            border: 1px solid #ccc;
+            border: 1px solid var(--light-grey);
             border-radius: 4px;
             text-align: center;
             padding: 3px 5px;
@@ -378,9 +378,6 @@
           background: var(--light-blue);
           padding: 3px 3px;
         }
-        .date{
-            float: right;
-        }
     }
 
     @media screen and (max-width: 789px) {
@@ -391,6 +388,7 @@
                 width: 100%;
                 max-height: 250px;
                 height: auto;
+                min-width: none;
             }
 
             .sidebar{
@@ -399,13 +397,23 @@
                     flex-direction: row;
                     justify-content: space-between;
                     .news-item{
-                        //width: calc((100% - 20px) / 2);
+                        width: calc((100% - 20px) / 2);
                         font-size: 16px;
-                        min-width: 100%;
                     }
                 }
                 .newsletter{
                     display: none;
+                }
+            }
+        }
+        @media screen and (max-width: 569px) {
+            &{
+                .sidebar{
+                    .news-items{
+                        .news-item{
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }

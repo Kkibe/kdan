@@ -19,6 +19,7 @@ const Newsletter = () => {
         
         success && setTimeout(() => {
           setSuccess(null);
+          setEmail('');
         }, 1000);
       }, [error, success]);
     

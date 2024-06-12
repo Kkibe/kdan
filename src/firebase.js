@@ -10,8 +10,7 @@ const firebaseConfig = {
     projectId: "taxa-ca7ec",
     storageBucket: "taxa-ca7ec.appspot.com",
     messagingSenderId: "66856931301",
-    appId: "1:66856931301:web:ee653d801cf12d2c9ca90c",
-    measurementId: "G-SCQ3L2C189"
+    appId: "1:66856931301:web:ee653d801cf12d2c9ca90c"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -30,7 +29,8 @@ export const signInUser = (email, password, setError) => {
   return;
 }
 
-export const getNews= async (pagination, category, setNews) => {
+export const getNews= async (pagination, category, setNews, setLoading) => {
+  setLoading(true);
   const newsCollectionRef = collection(db, "news");
   var q = query(newsCollectionRef, orderBy("timestamp", "desc"), limit(pagination));
   if(category !== 'all'){
@@ -44,20 +44,19 @@ export const getNews= async (pagination, category, setNews) => {
     });
   }).then(() => {
     setNews(news);
-  });
-
-  /*
-  const data = await q.get();
-  setNews(data.docs.map(doc => ({...doc.data(), id: doc.id})));
-  */
+    setLoading(false);
+  }).catch(err => setLoading(false));
 };
 
-export const getNewsItem = async (newsId, setNewsItem) => {
+export const getNewsItem = async (newsId, setNewsItem, setLoading) => {
+  setNewsItem(null);
+  setLoading(true);
   const newsDocRef = doc(db, "news", newsId);
  const newsDoc = await getDoc(newsDocRef);
   if (newsDoc.exists()) {
     setNewsItem({id: newsDoc.id, ...newsDoc.data()})
   }
+  setLoading(false);
   return;
 };
 
@@ -80,8 +79,7 @@ export const addContact = async (data, setSuccess, setError) => {
   const contactsDocRef = collection(db, "contacts");
   await addDoc(contactsDocRef, {...data, responded: false}).then(async (userCredential) => {
     setSuccess("We will get back to you as soon as possible.")
-  })
-  .catch(async (error) => {
+  }).catch(async (error) => {
     const errorMessage = await error.message;
     setError(errorMessage);
   });
@@ -102,14 +100,14 @@ export const addMailList = async (data, setSuccess, setError) => {
   return;
 };
 
-export  const addNews = async (data, setError) => {
+export  const addNews = async (data, setError, setLoading) => {
+  setLoading(true);
   const newsDocRef = collection(db, "news");
   if (data.image) {
     const imageRef = ref(storage, `images/${data.image.name.split(" ").join("_")}`);
     const metadata = {
         contentType: 'image/jpeg',
     };
-    
     await uploadBytes(imageRef, data.image, metadata).then((response) => {
       return getDownloadURL(response.ref);
     }).then(async(downloadURL) => {
@@ -121,13 +119,14 @@ export  const addNews = async (data, setError) => {
         timestamp: new Date().toLocaleDateString()
       }).then(async (docRef) => {
         window.location.replace(`/news/${docRef.id}`);
-      })
-      .catch(async (error) => {
+      }).catch(async (error) => {
         setError(error.message);
+        setLoading(false);
       });
     })
-    
   } else {
-    alert('Please upload an image');
-  }
+    alert('Please} upload an image');
+    setLoading(false);
+  };
+  
 };

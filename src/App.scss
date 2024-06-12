@@ -7,21 +7,16 @@
   --dark-blue: #023020;
   --blue: #007A37;
   --grey: #4d5974;
+  --light-grey: #ccc; 
   --dark-shadow: 0px 5px 3px -4px --black;
   --shadow: 1px 2px 3px -1px --black,1px 2px 3px -1px --black;
   --transparent:rgba(0, 0, 0, .03);
 } 
 
-
-
-
-
-
 *, *::before, *::after{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //font: 18px 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font: 18px Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
@@ -35,7 +30,6 @@
     justify-content: center;
     margin-top: 60px;
     color: var(--dark);
-    //min-height: calc(100vh - 200px);
     
     h1{
       width: 100%;
@@ -86,7 +80,6 @@
   
   .btn {
     cursor: pointer;
-    display: inline-block;
     border: 0;
     font-weight: bold;
     padding: 10px 20px;
@@ -102,7 +95,7 @@
     text-decoration: none;
   }
   .btn:hover {
-    box-shadow: 0px 25px 18px -6px rgba(0, 0, 0, 0.2);;
+    box-shadow: 0px 25px 18px -6px rgba(0, 0, 0, 0.2);
     background: var(--dark-blue);
     color: var(--lite);
     opacity: 0.9;
@@ -145,6 +138,5 @@
   .btn:hover {
     background: var(--lite);
     color: var(--black);
-  
   }
 }

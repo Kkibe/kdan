@@ -1,8 +1,8 @@
 import React from 'react';
-import Taxa1 from '../../assets/taxa-s1.png';
-import Taxa2 from '../../assets/taxa-s2.png'
-import Taxa3 from '../../assets/taxa-s3.png';
-import Taxa4 from '../../assets/taxa-s4.png';
+import Taxa1 from '../../assets/KDAN.png';
+import Taxa2 from '../../assets/kdan-flyer.png'
+import Taxa3 from '../../assets/2.png';
+import Taxa4 from '../../assets/logo.png';
 
 import './Services.scss'
 import { NavLink } from 'react-router-dom';

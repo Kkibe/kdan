@@ -47,7 +47,7 @@
       "src": "logo512.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "maskable"
+      "purpose": "maskable any"
     }
   ],
   "author": "https://github.com/k-kibet",
@@ -62,5 +62,16 @@
   "theme_color": "#2196f3",
   "background_color": "#ebf4fc",
   "orientation": "portrait",
-  "categories": ["Utilities", "Finance", "Business", "News", "Tools"]
+  "categories": ["Utilities", "Finance", "Business", "News", "Tools"],
+
+
+
+  "dir": "ltr",
+  "lang": "en",
+  "version":"1.0.0",
+  "related_applications" : [],
+  "prefer_related_applications": false,
+  "devDependencies":{
+    "http-server":"^0.10.0"
+  }
 }

@@ -6,7 +6,7 @@ export default function JobsFlyer() {
   }
   return (
     <div className="flyer" style={{width: '100%', padding: '5px'}}>
-          <h1>Oh! You have digged our website and would like to contribute?</h1>
+          <h1>Join us in this journey of creating a debt free nation.</h1>
           <h1>We use your contribution to get information to more people like you.</h1>
         <NavLink className="btn"  onClick={handleToggle} title='donate'>DONATE</NavLink>
     </div>

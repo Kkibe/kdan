@@ -15,7 +15,6 @@
       padding-bottom: 55%;
       border-radius: 6px;
       transition: all 0.4s;
-      border: 1px solid green;
     }
     h4{
       text-decoration: none;
@@ -30,16 +29,6 @@
       display: -webkit-box;    
       -webkit-box-orient: vertical;
       -webkit-line-clamp: var(--max-lines);
-
-      
-      //display: block;/* or inline-block */
-      //text-overflow: ellipsis;
-      //word-wrap: break-word;
-      //max-height: 3.6em; /* (Number of lines you want visible) * (line-height) */
-      //line-height: 1.8em;
-      //display: inline-block;
-      //line-height: 1.2em;
-      //text-align:justify;
       
       span{
         color: var(--blue);

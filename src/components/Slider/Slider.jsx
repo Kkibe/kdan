@@ -2,9 +2,9 @@ import { ArrowLeftOutlined, ArrowRightOutlined  } from '@mui/icons-material';
 import {useState} from 'react';
 import './Slider.scss'
 //slides
-import Taxa1 from '../../assets/online-services-for-you.webp';
-import Taxa2 from '../../assets/taxa2.png';
-import Taxa3 from '../../assets/taxa-flyer.png';
+import Taxa1 from '../../assets/2.png';
+import Taxa2 from '../../assets/kdan-flyer.png';
+import Taxa3 from '../../assets/KDAN.png';
 import { NavLink } from 'react-router-dom';
 
 const slides = [
