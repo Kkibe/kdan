@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <header>
             <NavLink to="/" className='logo'>
-                    <img src={Logo} alt='taxa_logo'/>
+                    <img src={Logo} alt='kdan_logo'/>
             </NavLink> 
             <nav>
                 <NavLink to="/" title='home' >Home</NavLink>

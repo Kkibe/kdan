@@ -55,7 +55,7 @@ export default function SingleNews() {
             <base href={window.location.hostname}></base>
             <meta name="description" content={news.title}/>
             <meta name="keywords" content={`tax, business, policy, ${news.category}`}/>
-            <meta name="author" content="Taxa Kenya"/>
+            <meta name="author" content="KDAN Kenya"/>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
           </Helmet>}
           <div className="scroll-line" style={{width: scroll + '%'}}></div>

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Done, Error } from '@mui/icons-material';
 
 export default function Dialog({text, title, isError}) {
+
   return (
     <div className='dialog'>
         <div className="top">

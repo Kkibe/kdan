@@ -4,6 +4,8 @@
   padding: 10px 5px;
   margin: 10px 0;
   height: max-content;
+  background: var(--transparent);
+  border-radius: 10px;
   a{
     text-decoration: none;
     .img{
@@ -15,6 +17,7 @@
       padding-bottom: 55%;
       border-radius: 6px;
       transition: all 0.4s;
+      border: 1px solid var(--blue);
     }
     h4{
       text-decoration: none;

@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.329ce12d.css",
-    "main.js": "/static/js/main.40824c25.js",
-    "static/media/bg.mp4": "/static/media/bg.c69766a79367622c78ce.mp4",
+    "main.css": "/static/css/main.9d7b6ca8.css",
+    "main.js": "/static/js/main.c0ae4c03.js",
+    "static/media/bg.mp4": "/static/media/bg.5529dc039598ccdbba83.mp4",
+    "static/media/f3.png": "/static/media/f3.8d1ccdad26705f1e3e76.png",
+    "static/media/f2.png": "/static/media/f2.75e88a950e0cf88b7034.png",
+    "static/media/f1.png": "/static/media/f1.a1cd9776273c4f72cfbb.png",
     "static/media/kdan-flyer.png": "/static/media/kdan-flyer.55289a8f6810bf1e6b6a.png",
-    "static/media/2.png": "/static/media/2.77ec7032c0168a249b13.png",
+    "static/media/f4.png": "/static/media/f4.ec1081ad60ab743cf46d.png",
     "static/media/logo.png": "/static/media/logo.6ae0360c34c7136f3f89.png",
-    "static/media/KDAN.png": "/static/media/KDAN.ef0117fd6359aa2740db.png",
     "index.html": "/index.html",
-    "main.329ce12d.css.map": "/static/css/main.329ce12d.css.map",
-    "main.40824c25.js.map": "/static/js/main.40824c25.js.map"
+    "main.9d7b6ca8.css.map": "/static/css/main.9d7b6ca8.css.map",
+    "main.c0ae4c03.js.map": "/static/js/main.c0ae4c03.js.map"
   },
   "entrypoints": [
-    "static/css/main.329ce12d.css",
-    "static/js/main.40824c25.js"
+    "static/css/main.9d7b6ca8.css",
+    "static/js/main.c0ae4c03.js"
   ]
 }

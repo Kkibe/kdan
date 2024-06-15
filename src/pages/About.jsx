@@ -15,7 +15,7 @@ export default function About() {
             <meta name="description" content={"Kenya Debt Abolition Network is dedicated to advocating for the elimination of unsustainable debt burdens in Kenya. Through education, advocacy, and community engagement, we aim to create a debt-free future that fosters economic growth and social equity."}/>
           </Helmet>
     <div className="quote">
-      <img src={Image} alt="taxa_about_flyer_thumbnail" />
+      <img src={Image} alt="kdan_about_flyer_thumbnail" />
       <div className='content'>
         <p>
         Kenya Debt Abolition Network is dedicated to advocating for the elimination of unsustainable debt burdens in Kenya. Through education, advocacy, and community engagement, we aim to create a debt-free future that fosters economic growth and social equity.

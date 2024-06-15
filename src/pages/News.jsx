@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { Facebook, LinkedIn, NetworkWifi1Bar, X } from '@mui/icons-material';
 import { useLocation } from 'react-router-dom';
 import Loader from '../components/Loader/Loader';
+import { Helmet } from 'react-helmet-async';
 
 
 export default function News() {
@@ -39,6 +40,13 @@ export default function News() {
  
   return (
     <div className='news'>
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>NEWS | KDAN KENYA - "Empowering Kenya, Erasing Debt"</title>
+            <link rel="canonical" href={window.location.hostname} />
+            <base href={window.location.hostname}></base>
+            <meta name="description" content={"Kenya Debt Abolition Network is dedicated to advocating for the elimination of unsustainable debt burdens in Kenya. Through education, advocacy, and community engagement, we aim to create a debt-free future that fosters economic growth and social equity."}/>
+      </Helmet>
       <div className="news-flyer">
         <h1>Explore News</h1>
         <div className="order-categories">
@@ -48,9 +56,9 @@ export default function News() {
           <NavLink title='statistics' to='?category=statistics' className={category === 'statistics' && "current"}>Statistics</NavLink>
         </div>
         <div className="social">
-          <Link to='https://twitter.com/ancientpupy' title='twitter/@taxa_kenya' target='_blank'><X /></Link>
-          <Link to='https://www.linkedin.com/in/kibetkorir' title='linkedin/in/taxa-kenya' target='_blank'><LinkedIn /></Link>
-          <Link to='https://www.facebook.com/kibetkorirc' title='facebook/taxa-kenya' target='_blank'><Facebook /></Link>
+          <Link to='https://twitter.com/ancientpupy' title='twitter/@kdan_kenya' target='_blank'><X /></Link>
+          <Link to='https://www.linkedin.com/in/kibetkorir' title='linkedin/in/kdan-kenya' target='_blank'><LinkedIn /></Link>
+          <Link to='https://www.facebook.com/kibetkorirc' title='facebook/kdan-kenya' target='_blank'><Facebook /></Link>
         </div>
       </div>
       <div className='post-container'>

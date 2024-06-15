@@ -1,4 +1,4 @@
-const CACHE_NAME = 'taxa-cache';
+const CACHE_NAME ='kdan-cache';
 const urlsToCache = [
     '/',
     '/index.html',

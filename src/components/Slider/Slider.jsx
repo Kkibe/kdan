@@ -2,27 +2,27 @@ import { ArrowLeftOutlined, ArrowRightOutlined  } from '@mui/icons-material';
 import {useState} from 'react';
 import './Slider.scss'
 //slides
-import Taxa1 from '../../assets/2.png';
-import Taxa2 from '../../assets/kdan-flyer.png';
-import Taxa3 from '../../assets/KDAN.png';
+import Kdan1 from '../../assets/f3.png';
+import Kdan2 from '../../assets/f4.png'
+import Kdan3 from '../../assets/f2.png';
 import { NavLink } from 'react-router-dom';
 
 const slides = [
     {
         id: 1,
-        img: Taxa1,
+        img: Kdan1,
         title: "Exclusive research on tax issues in Kenya",
         link: "#featured"
     },
     {
         id: 2,
-        img: Taxa2,
+        img: Kdan2,
         title: "Resources to help you file returns easily",
         link: "/about"
     },
     {
         id: 3,
-        img: Taxa3,
+        img: Kdan3,
         title: "Informational materials and tax insights",
         link: "/news",
     }

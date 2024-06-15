@@ -5,7 +5,7 @@ import axios from 'axios';
 import { PhoneInput } from 'react-international-phone';
 import 'react-international-phone/style.css';
 import { PhoneNumberUtil } from 'google-libphonenumber';
-
+import { Buffer } from 'buffer'
 
 
 const phoneUtil = PhoneNumberUtil.getInstance();
@@ -31,15 +31,36 @@ export default function Donate() {
     }
   }
 
-  
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const getAccessToken = async () => {
+    const consumerKey = "RdEJrgnH4JrWohlITIhbaX4wGnDTzdoCYc3V7N9zGho36SI8";//yourConsumerKey
+    const consumerSecret = "LvH3Y9DGBYOZIvOef7qy8cijl1Qxy9L4jGgiPXVuYdX73lesA7GmxHbkb1W9NZ3O";//yourConsumerKey
+    //choose one depending on you development environment
+    const url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";  //sandbox
+    //const url = "https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials",  //live
     
+  try {
+    const encodedCredentials = new Buffer.from(consumerKey + ":" + consumerSecret).toString('base64');
+    const headers = {
+      'Authorization': "Basic" + " " + encodedCredentials,
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://kdan.onrender.com/',
+      'mode': 'no-cors',
+    }; 
+    const response = await axios.get(url, { headers });
+    return response.data.access_token;
+  } catch (error) {
+    console.log(error);
+    //throw new Error('Failed to get access token.');
+  }
+}
+
+
+  async function sendStkPush (event) {
+    event.preventDefault();
     if(!isPhoneValid(phoneNumber)){
       setError("invalid phone number");
       return;
     } 
-    
     if(phoneNumber <= 0){
       setError("amount can not be empty");
       return;
@@ -48,44 +69,58 @@ export default function Donate() {
     const numberArray = phoneNumber.split("");
     numberArray.shift();
 
-    const requestBody =  {
-      "BusinessShortCode": 174379,
-      "Password": "MTc0Mzc5YmZiMjc5ZjlhYTliZGJjZjE1OGU5N2RkNzFhNDY3Y2QyZTBjODkzMDU5YjEwZjc4ZTZiNzJhZGExZWQyYzkxOTIwMjQwNTI5MDMwMDUy",
-      "Timestamp": Date.now,
-      "TransactionType": "CustomerPayBillOnline",
-      "Amount": 1,
-      "PartyA": numberArray.join(""),
-      "PartyB": 174379,
-      "PhoneNumber": numberArray.join(""),
-      "CallBackURL": "https://mydomain.com/path",
-      "AccountReference": "CompanyXLTD",
-      "TransactionDesc": "Payment of X" 
-    }
+    const token = await getAccessToken();
+    const date = new Date();
+    const timestamp =
+    date.getFullYear() +
+    ("0" + (date.getMonth() + 1)).slice(-2) +
+    ("0" + date.getDate()).slice(-2) +
+    ("0" + date.getHours()).slice(-2) +
+    ("0" + date.getMinutes()).slice(-2) +
+    ("0" + date.getSeconds()).slice(-2);
 
-    fetch('https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials', {
-      mode:  'cors',
-      method: 'POST',
-      headers: {
-      'Content-Type': 'application/json',
-      "Authorization": "Bearer cFJZcjZ6anEwaThMMXp6d1FETUxwWkIzeVBDa2hNc2M6UmYyMkJmWm9nMHFRR2xWOQ==",
-    }}).then(response => console.log(response))
-      .catch(error => console.error(error));
+    //you can use momentjs to generate the same in one line 
+
+    const shortCode = 174379;//"YOUR_PAYBILL"; //sandbox -174379
+    const passkey = "YOUR_PASSKEY";
     
-    
-    await axios.post('https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',{
-      body: requestBody,
-      headers:{
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer YZMLSeRyhUqbjLfydaZpQFfoYLWG',
-      'Access-Control-Allow-Origin' : '*',
-    }})
-    .then((res) => {
-      console.log(res);
-    }).catch(error => {
-      console.log(error);
-    })
-  };
+
+    const stk_password = new Buffer.from(shortCode + passkey + timestamp).toString(
+          "base64"
+        );
+
+    //choose one depending on you development environment
+    const url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
+    //const url = "https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest",
   
+    const headers = {
+      'Authorization': 'Bearer ' + token,
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': 'https://kdan.onrender.com/',
+      'mode': 'no-cors',
+    };
+  
+    const requestBody = {
+      "BusinessShortCode": shortCode,
+      "Password": stk_password,
+      "Timestamp": timestamp,
+      "TransactionType": "CustomerPayBillOnline", //till "CustomerBuyGoodsOnline"
+      "Amount": "10",
+      "PartyA": numberArray.join(""),
+      "PartyB": shortCode,
+      "PhoneNumber": numberArray.join(""),
+      "CallBackURL": "https://yourwebsite.co.ke/callbackurl",
+      "AccountReference": "CompanyXLTD",//"account",
+      "TransactionDesc": "test",
+    };
+  
+    try {
+      const response = await axios.post(url, requestBody, { headers });
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+}
   
   useEffect(() => {
     error && setTimeout(() => {
@@ -103,7 +138,7 @@ export default function Donate() {
             <li>&raquo; Select the amount you wish to donate and click "SEND NOW"</li>
             <li>&raquo; Complete the transaction by entering you pin and submit</li>
         </ul>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={sendStkPush}>
             <h4>Get started:</h4>
             <label htmlFor='name'>Phone number</label>
             <PhoneInput

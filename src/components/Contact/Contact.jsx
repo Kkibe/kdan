@@ -52,7 +52,7 @@ const Contact = () => {
                   Kenya
                 </p>
                 <p><Phone />  phone <Link to="tel:+1234567890">+1 234 567 890</Link></p>
-                <p><Email />  mail to. <Link to="mailto:admin@taxa.org">admin@kdan.org</Link></p>
+                <p><Email />  mail to. <Link to="mailto:admin@kdan.org">admin@kdan.org</Link></p>
               </div>
             
             <form onSubmit={handleSubmit}>

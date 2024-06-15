@@ -43,13 +43,13 @@ export default function Admin() {
     };
   return (
     <div className='admin'>
-        <Helmet>
+          <Helmet>
             <meta charSet="utf-8" />
-            <title>Admin Taxa Kenya - Fair Taxes, Just Kenya: Unite for Equity and Accountability.</title>
+            <title>AdMIN |  KDAN KENYA - "Empowering Kenya, Erasing Debt"</title>
             <link rel="canonical" href={window.location.hostname} />
             <base href={window.location.hostname}></base>
-            <meta name="description" content={"Taxa Kenya is dedicated to combating tax discrimination and injustices in Kenya. Through education, advocacy, and community engagement, we are committed to advocating for fair and equitable tax policies that benefit all citizens."}/>
-        </Helmet>
+            <meta name="description" content={"Kenya Debt Abolition Network is dedicated to advocating for the elimination of unsustainable debt burdens in Kenya. Through education, advocacy, and community engagement, we aim to create a debt-free future that fosters economic growth and social equity."}/>
+          </Helmet>
         <h1>Post a blog <NavLink className='btn' onClick={handleLogOut}>Log Out</NavLink></h1>
         {!loading && <form onSubmit={handleSubmit}>
             <label htmlFor="title">post title:</label>

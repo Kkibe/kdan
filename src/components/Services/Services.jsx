@@ -1,8 +1,8 @@
 import React from 'react';
-import Taxa1 from '../../assets/KDAN.png';
-import Taxa2 from '../../assets/kdan-flyer.png'
-import Taxa3 from '../../assets/2.png';
-import Taxa4 from '../../assets/logo.png';
+import Kdan1 from '../../assets/f3.png';
+import Kdan2 from '../../assets/f4.png'
+import Kdan3 from '../../assets/f1.png';
+import Kdan4 from '../../assets/f2.png';
 
 import './Services.scss'
 import { NavLink } from 'react-router-dom';
@@ -12,7 +12,7 @@ const Data = [
     id:1,
     name: "Learn more",
     title: "Research and Data Analysis",
-    img: Taxa1,
+    img: Kdan1,
     desc: "Carry out research on the state of debt in Kenya, analyzing trends, impacts, and potential solutions. Publish reports and studies to inform policy decisions and raise public awareness.",
     link: "#"
 },
@@ -21,7 +21,7 @@ const Data = [
     id:2,
     name: "Learn more",
     title: "Support for Small Businesses and Entrepreneurs",
-    img: Taxa2,
+    img: Kdan2,
     desc: "Offer support services for small businesses and entrepreneurs, including financial planning advice, access to microloans, and training programs to help them grow and succeed without falling into debt traps.",
     link: "#"
 },
@@ -30,7 +30,7 @@ const Data = [
     id:3,
     name: "Learn More",
     title: "Advocacy and Policy Engagement",
-    img: Taxa3,
+    img: Kdan3,
     desc: "Engage in advocacy efforts to influence policy changes that promote debt relief and financial justice. Work with government agencies, international organizations, and policymakers to push for systemic changes that benefit Kenyan citizens.",
     link: "#"
 },
@@ -39,7 +39,7 @@ const Data = [
     id:4,
     name: "Learn more",
     title: "Educational Workshops and Seminars",
-    img: Taxa4,
+    img: Kdan4,
     desc: "Offer workshops and seminars focused on financial literacy, debt management, and economic empowerment. These sessions aim to equip participants with the knowledge and skills to manage their finances effectively.",
     link: "#"
 }
